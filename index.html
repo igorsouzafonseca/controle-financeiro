@@ -91,7 +91,7 @@
     </div>
 
     <!-- Main App Container -->
-    <div id="appContainer" class="flex-1 flex flex-col max-w-md w-full mx-auto bg-slate-950 relative overflow-hidden shadow-2xl border-x border-slate-800/60" style="display: none;">
+    <div id="appContainer" class="flex-1 flex flex-col max-w-md w-full mx-auto bg-slate-950 relative overflow-hidden shadow-2xl border-x border-slate-800/60">
         
         <!-- Header -->
         <header class="bg-slate-900/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-30 px-4 py-3 flex items-center justify-between">
@@ -355,7 +355,7 @@
         }
 
         function saveToLocalStorage() {
-            localStorage.setItem('fonseca_system_user_name', state.userName);
+            localStorage.setItem('fonseca_system_name', state.userName);
             localStorage.setItem('fonseca_system_transactions', JSON.stringify(state.transactions));
         }
 
@@ -561,7 +561,6 @@
                 tx.status = tx.status === 'paid' ? 'pending' : 'paid';
                 saveToLocalStorage();
                 render();
-                showToast(tx.status === 'paid' ? "Parcela marcada como paga!" : "Parcela marcada como pendente.", "success");
             }
         }
 
